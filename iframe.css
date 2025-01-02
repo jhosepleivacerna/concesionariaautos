@@ -1,0 +1,402 @@
+:root {
+    --color-principal: red;
+    --color-primary-hover: #04A75B;
+    --color-verde: #04A75B;
+    --color-negro: #444A47;
+    --color-fondo: #F7F9FD;
+    --color-footer: #151515;
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.offer-title {
+    animation: blink 4s infinite;
+}
+
+.offer-title[data-aos="zoom-in"] {
+    animation: blink 1s infinite, zoomIn 3s ease-in-out;
+}
+
+
+section {
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.header-title h1 {
+    color: var(--color-negro);
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+
+.header-title h1::after {
+    content: '';
+    width: 76px;
+    height: 5px;
+    background: var(--color-principal);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 3px;
+}
+
+/* Banners y imágenes de ofertas */
+.offer-banner {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.offer-banner video {
+    width: 100%;
+    opacity: 0.9;
+    transition: opacity 1s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.offer-banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+.offer-image {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.color-options {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.color-option {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        transform: rotate(360deg) scale(1.15);
+    }
+}
+
+.color-option span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.color-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 2px 6px;
+}
+
+/* Tarjetas y botones */
+.card {
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-icon {
+    font-size: 230%;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--color-verde);
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #038d45;
+    }
+}
+
+.ventaja-card {
+    border: 2px solid var(--color-verde);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-verde);
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.ventaja-card h5 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-negro);
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.gallery-title::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background: var(--color-verde);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+
+.img-fluid {
+    width: 800px;
+    height: 430px;
+    border-radius: 4px;
+}
+
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tab-option {
+    padding: 0.8rem 2rem;
+    font-size: 84%;
+    font-weight: bold;  
+    text-transform: uppercase;
+    border-radius: 25px;
+    background-color: #fff;
+    color: var(--color-negro);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-option:hover {
+    background-color: var(--color-primary-hover);
+    color: white;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.tab-option.active {
+    background-color: var(--color-verde);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilos generales para las imágenes en la galería */
+.gallery img {
+    width: 100%;            /* Asegura que las imágenes ocupen todo el ancho disponible */
+    max-width: 90%;         /* Limita el ancho máximo */
+    height: auto;           /* Mantiene la proporción de las imágenes */
+    border-radius: 10px;    /* Añade bordes redondeados */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre las imágenes */
+.gallery img:hover {
+    transform: scale(1.2); /* Ligera ampliación de la imagen */
+}
+
+/* Estilo de la galería (disposición de las imágenes en columna) */
+.gallery {
+    display: flex;
+    flex-direction: column; /* Cambia el flujo de las imágenes a una sola columna */
+    align-items: center;    /* Centra las imágenes horizontalmente */
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.gallery .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.gallery-image {
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);  
+    cursor: pointer;      
+}
+
+/* Estilo de la leyenda (visible solo cuando se pasa el cursor) */
+.image-caption {
+    position: absolute;
+    bottom: -30px;           /* Inicia ligeramente fuera de la imagen */
+    left: 50%;
+    transform: translateX(-50%) translateY(30px); /* Inicia fuera de la imagen */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;           
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-image:hover .image-caption {
+    opacity: 1;             
+    transform: translateY(0); 
+}
+
+
+@media (max-width: 768px) {
+    .offer-banner h1 {
+        font-size: 1.5rem;
+        /* Pantallas medianas */
+    }
+
+    .ventaja-card {
+        padding: 1.3rem;
+
+        &:hover {
+            transform: scale(1.06);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .offer-banner h1 {
+        font-size: 1.2rem;
+        /* Pantallas pequeñas */
+    }
+
+    .img-fluid {
+        width: 800px;
+        height: 200px;
+    }
+
+    .ventaja-card {
+        padding: 1.2rem;
+        margin-top: 15px;
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+
+    section {
+        margin-top: 20%;
+        margin-bottom: 35%;
+    }
+  
+}
+
+@media (max-width: 1024px) {
+    .gallery img {
+        width: 900px;
+        height: 400px;  
+        height: auto;   
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;    
+    }
+
+    .gallery .row {
+        display: flex;
+        flex-direction: column; 
+        gap: 9rem;            
+    }
+
+    .gallery .col {
+        width: 100%;            
+        text-align: center;     
+    }
+}
+
+@media (max-width: 500px) {
+    .offer-banner h1 {
+        font-size: 1rem;
+        /* Pantallas pequeñas */
+    }
+
+    .img-fluid {
+        width: 800px;
+        height: 200px;
+    }
+
+    .ventaja-card {
+        padding: 1.5rem;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    .gallery .row {
+        display: flex;
+        flex-direction: column; /* Cambia el diseño a columna */
+        gap: 1rem;            /* Ajusta el espacio entre las imágenes */
+    }
+
+}
